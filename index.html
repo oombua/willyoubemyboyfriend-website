@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my boyfriend?</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: 'Franklin Gothic Medium';
+        }
+        h1 {
+            font-size: 36px;
+            color: #e91e63;
+        }
+        img {
+            margin: 20px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s ease;
+            max-width: 200px;
+            word-wrap: break-word;
+        }
+        button:hover {
+            transform: scale(1.05);
+        }
+        #yesBtn {
+            font-family: 'Franklin Gothic Medium';
+            background-color: #4CAF50;
+            color: white;
+        }
+        #noBtn {
+            font-family: 'Franklin Gothic Medium';
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my boyfriend? 💕</h1>
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExb3Nra2w4ajRxbmRyazlqaDMzamhnOW01OGUzaHZybXdzcnVwZzd2ZiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/6CVswKPkqHg9OGDVkm/giphy.gif" alt="Bear with rose" width="256" height="256">
+    
+    <div>
+        <button id="yesBtn">Yes</button>
+        <button id="noBtn">No</button>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+
+        let yesBtnSize = 18;
+        const noBtnTexts = ["Are you sure?", "Really?", "Think again?", "Sure about that?", "Don't break my heart 😢"];
+        let noClickCount = 0;
+
+        noBtn.addEventListener('click', () => {
+            // Make the "Yes" button bigger
+            yesBtnSize += 5;
+            yesBtn.style.fontSize = `${yesBtnSize}px`;
+
+            // Change "No" button text
+            if (noClickCount < noBtnTexts.length) {
+                noBtn.textContent = noBtnTexts[noClickCount];
+            } else {
+                noBtn.textContent = "Please say Yes 😭";
+            }
+            noClickCount++;
+        });
+
+        yesBtn.addEventListener('click', () => {
+            alert("Yay! 💖 You made my day!");
+        });
+    </script>
+
+</body>
+</html>
